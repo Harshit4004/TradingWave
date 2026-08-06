@@ -1,0 +1,159 @@
+/* navbar */
+/* .navBar-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+} */
+.nav-link {
+  margin-left: 1.2rem;
+  font-size: 0.89rem;
+}
+.nav-link:hover {
+  color: rgb(12, 111, 211) !important;
+}
+@media (max-width: 991.98px) {
+  /* .navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+  } */
+
+  .navbar-nav {
+    align-items: flex-end;
+  }
+}
+.footer-link a {
+  display: block !important;
+  margin-top: 14px !important;
+  text-decoration: none;
+  color: rgb(95, 94, 94);
+}
+.hover-color a:hover {
+  color: rgb(12, 111, 211) !important;
+  font-weight: 500;
+}
+
+/* Product section  */
+.product-link a:hover {
+  color: black !important;
+}
+
+/* support */
+.support-link li a {
+  text-decoration: none !important;
+  color: rgb(7, 130, 207) !important;
+}
+.support-link li a:hover {
+  color: black !important;
+  color: rgb(54, 54, 54) !important;
+}
+.dropdown-menu li {
+  margin: 1rem 0.5rem !important;
+  text-decoration: none;
+}
+.ticket-logo i {
+  color: rgb(7, 130, 207) !important;
+}
+@media (max-width: 574px) {
+  .support-button {
+    display: flex !important;
+    margin-left: 4.7%;
+  }
+}
+
+/* signup */
+.signup-link {
+  text-decoration: none !important;
+  color: rgb(7, 130, 207) !important;
+}
+.signup-link:hover {
+  color: rgb(5, 79, 152) !important;
+}
+#auth-icon {
+  color: grey;
+}
+.all-btns {
+  background-color: rgb(2, 129, 207) !important;
+}
+.auth-btn {
+  color: white;
+  font-weight: 500;
+}
+
+/* navbar */
+.menu:hover {
+  color: rgb(7, 130, 207) !important;
+}
+.menu.selected {
+  color: rgb(7, 130, 207) !important;
+  font-weight: 500 !important;
+}
+
+/* kite  */
+.kite-navbar li {
+  padding: 6px !important;
+  margin: 0 !important;
+}
+.kite-navbar li a {
+  color: rgb(93, 92, 92);
+  /* font-size: normal; */
+}
+.kite-navbar li a i {
+  font-size: medium;
+  padding-right: 7px !important;
+  color: rgb(118, 116, 116);
+}
+
+.kite-navbar li hr {
+  margin: 0 8px !important;
+}
+.kite-navbar-profile a{
+  color: rgb(97, 96, 96) !important;
+  font-weight: 500 !important;
+}
+.kite-navbar-profile{
+  color: rgb(97, 96, 96) !important;
+  font-weight: 500 !important;
+}
+
+.kite-navbar-profile:hover{
+  color: rgb(2, 129, 207) !important;
+  font-weight: 500 !important;
+}
+.kite-navbar-profile a:hover{
+  color: rgb(2, 129, 207) !important;
+  font-weight: 500 !important;
+}
+
+@media (max-width: 574px) {
+  .kite-card-image img{
+    display: none !important;
+  }
+}
+
+.kite-navbar-btn:active {
+ background-color: white;
+}
+.kite-dropdown {
+  margin: 0;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  position: relative;
+  font-size: 0.8rem;
+  font-weight: 400;
+  /* color: rgb(221, 139, 221); */
+  color: rgb(6, 115, 184);
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  text-align: center;
+  display: flex;
+  /* background: rgb(252, 229, 252); */
+  background: rgb(212, 232, 247);
+  margin-right: 8px;
+}

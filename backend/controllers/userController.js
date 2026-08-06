@@ -83,7 +83,7 @@ module.exports.logout = async (req, res, next) => {
     }
     const token = createSecretToken(user._id);
 
-    res.clearCookie("token", token, {
+    res.clearCookie("token", {
       httpOnly: true,
       secure: true,
       sameSite: "none",

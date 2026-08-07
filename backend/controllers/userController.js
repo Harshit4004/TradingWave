@@ -24,6 +24,7 @@ module.exports.signup = async (req, res, next) => {
       secure: true,
       sameSite: "none",
       path: "/",
+      maxAge: 3 * 24 * 60 * 60 * 1000,
     });
     return res.status(201).json({
       success: true,
@@ -64,6 +65,7 @@ module.exports.login = async (req, res, next) => {
       secure: true,
       sameSite: "none",
       path: "/",
+      maxAge: 3 * 24 * 60 * 60 * 1000,
     });
     return res
       .status(200)
@@ -90,6 +92,7 @@ module.exports.logout = async (req, res, next) => {
       secure: true,
       sameSite: "none",
       path: "/",
+      expires: new Date(0),
     });
 
     return res.status(200).json({

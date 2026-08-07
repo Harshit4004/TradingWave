@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import api from "../../api/api";
 
-function Kite() {
+function Tick() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState("");
@@ -60,4 +60,4 @@ function Kite() {
   );
 }
 
-export default Kite;
+export default Tick;

@@ -78,15 +78,6 @@ module.exports.login = async (req, res, next) => {
 
 module.exports.logout = async (req, res, next) => {
   try {
-    // const { username } = req.body;
-    // if (!username) {
-    //   return res.json({ message: "User is required to logout" });
-    // }
-    // const user = await User.findOne({ username });
-    // if (!user) {
-    //   return res.json({ message: "Incorrect username" });
-    // }
-    // const token = createSecretToken(user._id);
 
     res.clearCookie("token", {
       httpOnly: true,

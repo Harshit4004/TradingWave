@@ -11,9 +11,7 @@ function NavBar({ username }) {
 
   const Logout = async () => {
     try {
-      const { data } = await api.post("/api/auth/logout", {
-        username,
-      });
+      const { data } = await api.post("/api/auth/logout");
       if (data.success) {
         localStorage.clear();
 

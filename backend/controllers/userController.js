@@ -19,13 +19,7 @@ module.exports.signup = async (req, res, next) => {
       username,
     });
     const token = createSecretToken(user._id);
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,
-      sameSite: "none",
-      path: "/",
-      maxAge: 3 * 24 * 60 * 60 * 1000,
-    });
+    res.cookie("token", token);
     return res.status(201).json({
       success: true,
       message: "User signed up successfully",
@@ -60,14 +54,7 @@ module.exports.login = async (req, res, next) => {
     }
     const token = createSecretToken(user._id);
 
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,
-      sameSite: "none",
-      path: "/",
-      domain: "tradingwave-2.onrender.com",
-      maxAge: 3 * 24 * 60 * 60 * 1000,
-    });
+    res.cookie("token", token);
     return res
       .status(200)
       .json({ message: "User logged in successfully", success: true });
@@ -79,13 +66,7 @@ module.exports.login = async (req, res, next) => {
 module.exports.logout = async (req, res, next) => {
   try {
 
-    res.clearCookie("token", {
-      httpOnly: true,
-      secure: true,
-      sameSite: "none",
-      path: "/",
-      domain: "tradingwave-2.onrender.com",
-    });
+    res.clearCookie("token");
 
     return res.status(200).json({
       success: true,

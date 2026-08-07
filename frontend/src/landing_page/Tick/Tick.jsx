@@ -80,7 +80,7 @@ function Kite() {
 
   return (
     <>
-      <NavBar username={username, Logout} />
+      <NavBar username={username} Logout={Logout} />
       <Hero />
       <ToastContainer />
       <Universe />

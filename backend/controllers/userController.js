@@ -65,6 +65,7 @@ module.exports.login = async (req, res, next) => {
       secure: true,
       sameSite: "none",
       path: "/",
+      domain: "tradingwave-2.onrender.com",
       maxAge: 3 * 24 * 60 * 60 * 1000,
     });
     return res
@@ -92,7 +93,7 @@ module.exports.logout = async (req, res, next) => {
       secure: true,
       sameSite: "none",
       path: "/",
-      expires: new Date(0),
+      domain: "tradingwave-2.onrender.com",
     });
 
     return res.status(200).json({

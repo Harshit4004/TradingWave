@@ -91,13 +91,13 @@ function NavBar({ username }) {
               </li>
 
               <li>
-                <Link
+                <button
                   className="dropdown-item fw-medium kite-navbar-btn"
                   onClick={Logout}
                 >
                   <i className="fa-solid fa-arrow-right-from-bracket"></i>{" "}
                   Logout
-                </Link>
+                </button>
               </li>
             </ul>
           </li>

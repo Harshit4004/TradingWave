@@ -43,7 +43,7 @@ function Kite() {
       }
     };
     verifyCookie();
-  }, [navigate]);
+  }, [navigate, cookies]);
 
   if (loading) {
     return (

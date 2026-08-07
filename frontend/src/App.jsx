@@ -15,6 +15,7 @@ import Navbar from "./landing_page/Navbar";
 import Footer from "./landing_page/Footer";
 import "react-toastify";
 import { ToastContainer } from "react-toastify";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
@@ -32,7 +33,14 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
 
-        <Route path="/tick" element={<Tick />} />
+        <Route
+          path="/tick"
+          element={
+            <ProtectedRoute>
+              <Tick />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   );

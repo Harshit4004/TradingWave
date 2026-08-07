@@ -1,21 +1,17 @@
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import api from "../../api/api";
-import { useCookies } from "react-cookie";
 
 function NavBar({ username }) {
   const navigate = useNavigate();
-  const [cookies, removeCookie] = useCookies([]);
 
   const formattedUsername = username
-  ? username.charAt(0).toUpperCase() + username.slice(1)
-  : "";
+    ? username.charAt(0).toUpperCase() + username.slice(1)
+    : "";
 
   const Logout = async () => {
     try {
-      const { data } = await api.post("/api/auth/logout", {
-        username,
-      });
+      const { data } = await api.post("/api/auth/logout");
       if (data.success) {
         localStorage.removeItem("user");
 
@@ -57,9 +53,7 @@ function NavBar({ username }) {
                 {username?.charAt(0).toUpperCase()}
               </div>
 
-              <span className="d-none d-sm-inline">
-                 {formattedUsername}
-              </span>
+              <span className="d-none d-sm-inline">{formattedUsername}</span>
             </a>
 
             <ul

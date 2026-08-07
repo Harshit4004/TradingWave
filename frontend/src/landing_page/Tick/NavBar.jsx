@@ -1,9 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import api from "../../api/api";
+import { useCookies } from "react-cookie";
 
 function NavBar({ username }) {
   const navigate = useNavigate();
+  const [cookies, removeCookie] = useCookies([]);
 
   const formattedUsername = username
   ? username.charAt(0).toUpperCase() + username.slice(1)
@@ -16,6 +18,7 @@ function NavBar({ username }) {
       });
       if (data.success) {
         localStorage.clear();
+        removeCookie("token");
 
         navigate("/login", {
           state: {

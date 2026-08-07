@@ -11,7 +11,9 @@ function NavBar({ username }) {
 
   const Logout = async () => {
     try {
-      const { data } = await api.get("/api/auth/logout");
+      const { data } = await api.post("/api/auth/logout", {
+        username,
+      });
       if (data.success) {
         localStorage.clear();
 
@@ -89,13 +91,13 @@ function NavBar({ username }) {
               </li>
 
               <li>
-                <button
+                <Link
                   className="dropdown-item fw-medium kite-navbar-btn"
                   onClick={Logout}
                 >
                   <i className="fa-solid fa-arrow-right-from-bracket"></i>{" "}
                   Logout
-                </button>
+                </Link>
               </li>
             </ul>
           </li>

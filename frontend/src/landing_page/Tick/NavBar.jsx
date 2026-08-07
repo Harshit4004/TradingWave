@@ -17,7 +17,7 @@ function NavBar({ username }) {
         username,
       });
       if (data.success) {
-        localStorage.clear();
+        localStorage.removeItem("user");
 
         navigate("/login", {
           state: {

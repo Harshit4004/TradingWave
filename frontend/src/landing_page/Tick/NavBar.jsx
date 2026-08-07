@@ -1,40 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import api from "../../api/api";
-import { useCookies } from "react-cookie";
 
-function NavBar({ username }) {
+function NavBar({ username, Logout }) {
   const navigate = useNavigate();
-  const [cookies, removeCookie] = useCookies([]);
 
   const formattedUsername = username
   ? username.charAt(0).toUpperCase() + username.slice(1)
   : "";
 
-  const Logout = async () => {
-    try {
-      const { data } = await api.post("/api/auth/logout", {
-        username,
-      });
-      if (data.success) {
-        localStorage.clear();
-        removeCookie("token");
-
-        navigate("/login", {
-          state: {
-            message: data.message,
-          },
-        });
-      }
-    } catch (err) {
-      toast.error("Failed to logout. Please try again.", {
-        position: "top-right",
-        autoClose: 1500,
-      });
-
-      console.error(err);
-    }
-  };
+  
   return (
     <nav className="navbar border-bottom">
       <div className="container-fluid px-4 d-flex justify-content-between align-items-center">

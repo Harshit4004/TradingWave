@@ -6,11 +6,14 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import api from "../../api/api";
+import { useCookies } from "react-cookie";
 
 function Kite() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState("");
+  const [cookies, removeCookie] = useCookies([]);
+
   useEffect(() => {
     const verifyCookie = async () => {
       try {
@@ -50,9 +53,34 @@ function Kite() {
     );
   }
 
+  const Logout = async () => {
+    try {
+      const { data } = await api.post("/api/auth/logout", {
+        username,
+      });
+      if (data.success) {
+        localStorage.clear();
+        removeCookie("token");
+
+        navigate("/login", {
+          state: {
+            message: data.message,
+          },
+        });
+      }
+    } catch (err) {
+      toast.error("Failed to logout. Please try again.", {
+        position: "top-right",
+        autoClose: 1500,
+      });
+
+      console.error(err);
+    }
+  };
+
   return (
     <>
-      <NavBar username={username} />
+      <NavBar username={username, Logout} />
       <Hero />
       <ToastContainer />
       <Universe />

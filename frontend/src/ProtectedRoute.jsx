@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import api from "../api/api";
+import api from "./api/api";
 
 function ProtectedRoute({ children }) {
   const [loading, setLoading] = useState(true);

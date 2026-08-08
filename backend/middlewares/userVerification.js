@@ -20,7 +20,7 @@ module.exports.userVerification = async (req, res) => {
     if (!user) {
       return res.json({ status: false, message: "User not found" });
     }
-
+    res.set("Cache-Control", "no-store");
     return res.json({
       status: true,
       user: {

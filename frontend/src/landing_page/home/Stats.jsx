@@ -25,7 +25,7 @@ function Stats() {
                     </p>
                 </div>
                 <div className="col-lg-6 col-md-12 mt-5">
-                    <img src="media\images\ecosystem.png" alt="" style={{ width: "110%" }}/>
+                    <img src="media\images\ecosystem.png" alt="" style={{ width: "100%" }}/>
                     <div className="text-center mt-4" >
                         <a href="" className="me-4" style={{textDecoration: "none"}}>Explore our products <i className="fa-solid fa-arrow-right fs-9" style={{fontSize: "13px"}}></i></a>
                         <a href="" style={{textDecoration: "none"}}>Try Kite demo <i className="fa-solid fa-arrow-right" style={{fontSize: "13px"}}></i></a>

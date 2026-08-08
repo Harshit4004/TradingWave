@@ -27,7 +27,11 @@ function ProtectedRoute({ children }) {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="text-center mt-5">
+        <span className="spinner-border"></span>
+      </div>
+    );
   }
 
   return authenticated ? children : <Navigate to="/login" replace />;

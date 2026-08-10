@@ -19,7 +19,7 @@ function Hero() {
                   Welcome aboard, and happy investing!
                 </p>
                 <a
-                  href="http://localhost:5174/"
+                  href="https://trading-wave-2jrw.vercel.app"
                   target="_blank"
                   className="btn mt-4 px-4 fw-medium fs-5 d-flex align-items-center"
                   style={{

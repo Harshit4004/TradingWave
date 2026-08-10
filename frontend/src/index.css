@@ -23,14 +23,29 @@
     align-items: flex-end;
   }
 }
+/* home  */
+@media (max-width:574px) {
+  .home-hero-image {
+    width: 100% !important;
+  }
+}
+@media (max-width:574px) {
+  .navbar-for-phone {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
 .footer-link a {
   display: block !important;
   margin-top: 14px !important;
   text-decoration: none;
   color: rgb(95, 94, 94);
+  transition: background-color 0.2s ease, transform 0.15s ease !important;
 }
 .hover-color a:hover {
   color: rgb(12, 111, 211) !important;
+  transform: translateX(2px);
   font-weight: 500;
 }
 
@@ -79,6 +94,17 @@
 .auth-btn {
   color: white;
   font-weight: 500;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
 }
 
 /* navbar */
@@ -135,8 +161,9 @@
 .kite-navbar-btn:active {
  background-color: white;
 }
-.kite-dropdown {
-  margin: 0;
+
+.dropdown-username a {
+  padding: 5px 0 !important;
 }
 
 .avatar {
@@ -146,14 +173,21 @@
   position: relative;
   font-size: 0.8rem;
   font-weight: 400;
-  /* color: rgb(221, 139, 221); */
   color: rgb(6, 115, 184);
   justify-content: center;
   align-items: center;
   border-radius: 100%;
   text-align: center;
   display: flex;
-  /* background: rgb(252, 229, 252); */
   background: rgb(212, 232, 247);
   margin-right: 8px;
+}
+
+.dropdown-item{
+transition: background-color 0.2s ease, transform 0.15s ease !important;
+}
+.dropdown-item:hover {
+  background: #f5f5f5;
+  transform: translateX(2px);
+  color: rgb(250, 118, 78);
 }

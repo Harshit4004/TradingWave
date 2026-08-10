@@ -37,13 +37,13 @@ function NavBar({ username }) {
           <img
             src="/media/images/TradingWave_logo.jpeg"
             alt="logo"
-            style={{ width: "11rem" }}
+            style={{ width: "9rem" }}
           />
         </a>
         <ul className="dropdown kite-dropdown list-unstyled">
           <li className="nav-item dropdown kite-navbar-profile">
             <a
-              className="nav-link d-flex align-items-center"
+              className="nav-link d-flex align-items-center pt-2"
               href="#"
               role="button"
               data-bs-toggle="dropdown"
@@ -60,10 +60,15 @@ function NavBar({ username }) {
               className="dropdown-menu dropdown-menu-end kite-navbar text-muted mt-2"
               style={{ fontSize: ".85rem", padding: 0 }}
             >
-              <li>
-                <a className="dropdown-item kite-navbar-btn" href="#">
-                  {formattedUsername}
-                </a>
+              <li className="d-flex dropdown-item"  >
+                <div className="avatar ms-2">
+                  {username?.charAt(0).toUpperCase()}
+                </div>
+                <div className="dropdown-username mt-1">
+                  <a className="text-decoration-none" href="#">
+                    {formattedUsername}
+                  </a>
+                </div>
               </li>
 
               <li>
@@ -88,7 +93,7 @@ function NavBar({ username }) {
 
               <li>
                 <Link
-                  className="dropdown-item fw-medium kite-navbar-btn"
+                  className="dropdown-item fw-medium kite-navbar-btn logout"
                   onClick={Logout}
                 >
                   <i className="fa-solid fa-arrow-right-from-bracket"></i>{" "}

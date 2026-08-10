@@ -9,7 +9,7 @@ function CreateTicket() {
             <Ticket 
             ticketName="Account Opening"
             logo={<i className="fa-solid fa-circle-plus pb-2 fs-5"></i>}
-            item1="Resident individual Company, Partnership, HUF and LLP Glossary"
+            item1="Resident individual"
             item2="Minor"
             item3="Non Resident Indian (NRI)" 
             item4="Company, Partnership, HUF and LLP"

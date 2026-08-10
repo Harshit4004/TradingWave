@@ -2,11 +2,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import api from "../../api/api";
+import {
+  VisibilityOutlined,
+  VisibilityOffOutlined,
+} from "@mui/icons-material";
 
 function Signup() {
   const navigate = useNavigate();
   // Signup
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
@@ -100,6 +105,7 @@ function Signup() {
                   className="form-control"
                   aria-label="Username"
                   onChange={handleOnChange}
+                  autoFocus
                   required
                 />
               </div>
@@ -124,17 +130,25 @@ function Signup() {
                   <i className="fa-solid fa-lock" id="auth-icon"></i>
                 </span>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   disabled={loading}
                   minLength="8"
                   value={password}
                   placeholder="Password"
-                  className="form-control"
+                  className="form-control  rounded-end-2"
                   aria-label="Password"
                   onChange={handleOnChange}
                   required
                 />
+                <button
+                                  type="button"
+                                  onClick={() => setShowPassword(!showPassword)}
+                                  className="password-toggle"
+                                  style={{borderRadius:""}}
+                                >
+                                  {showPassword ? <VisibilityOutlined sx={{ color: "grey" }} /> : < VisibilityOffOutlined sx={{ color: "grey" }}/>}
+                                </button>
               </div>
               <button
                 type="submit"

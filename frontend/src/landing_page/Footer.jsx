@@ -1,12 +1,12 @@
 function Footer() {
   return (
-    <div className="container-fluid border-top mt-4 bg-light px-3">
-      <div className="row mt-4 pt-1 px-4">
+    <div className="container-fluid border-top mt-4 bg-light px-5 navbar-for-phone">
+      <div className="row mt-4 pt-1 px-3">
         <div className="col-lg-3 col-md-12">
           <img
             src="media\images\TradingWave_logo.jpeg"
             alt="Logo"
-            style={{ width: "180px" }}
+            style={{ width: "9.69rem" }}
           />
           <p className="text-muted mt-3" style={{ fontSize: ".84rem" }}>
             &copy; 2010 - 2026, TradingWave Broking Ltd. All rights reserved.
@@ -155,7 +155,7 @@ function Footer() {
       </div>
       <div
         className=" mx-4 px-4 pb-4 text-muted hover-color text-center"
-        style={{ fontSize: ".75rem" }}
+        style={{ fontSize: ".75rem", }}
       >
         <a href="" className="mx-2 text-decoration-none text-muted">
           NSE

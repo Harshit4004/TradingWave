@@ -2,11 +2,13 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import api from "../../api/api";
+import { VisibilityOutlined, VisibilityOffOutlined } from "@mui/icons-material";
 
 function Login() {
   const navigate = useNavigate();
   const location = useLocation();
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
@@ -31,6 +33,19 @@ function Login() {
       navigate(location.pathname, { replace: true, state: null });
     }
   }, [location, navigate]);
+
+  const params = new URLSearchParams(window.location.search);
+  const message = params.get("message");
+
+  if (message) {
+    toast.success(message, {
+      position: "top-right",
+      autoClose: 2000,
+    });
+
+    // Remove ?message=... from URL
+    window.history.replaceState({}, "", "/login");
+  }
 
   const handleError = (err) =>
     toast.error(err, {
@@ -88,9 +103,7 @@ function Login() {
             <h1 className="fs-4 ">Login</h1>
             <form onSubmit={handleSubmit}>
               <div className="input-group flex-nowrap mt-4 w-75 small">
-                <span
-                  className="input-group-text text-muted "
-                >
+                <span className="input-group-text text-muted ">
                   <i className="fa-solid fa-envelope" id="auth-icon"></i>
                 </span>
                 <input
@@ -107,25 +120,34 @@ function Login() {
                   required
                 />
               </div>
-              <div className="input-group flex-nowrap mt-3 w-75">
-                <span
-                  className="input-group-text text-muted small"
-                >
+              <div className="input-group flex-nowrap mt-3 w-75 ">
+                <span className="input-group-text text-muted small">
                   <i className="fa-solid fa-lock" id="auth-icon"></i>
                 </span>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   disabled={loading}
                   autoComplete="current-password"
                   minLength="8"
                   value={password}
                   placeholder="Password"
-                  className="form-control"
+                  className="form-control rounded-end-2"
                   aria-label="Password"
                   onChange={handleOnChange}
                   required
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="password-toggle rounded-1"
+                >
+                  {showPassword ? (
+                    <VisibilityOutlined sx={{ color: "grey" }} />
+                  ) : (
+                    <VisibilityOffOutlined sx={{ color: "grey" }} />
+                  )}
+                </button>
               </div>
               <button
                 type="submit"

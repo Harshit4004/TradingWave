@@ -19,7 +19,7 @@ function Hero() {
                   Welcome aboard, and happy investing!
                 </p>
                 <a
-                  href="https://tick-sandy.vercel.app"
+                  href="https://tick-nu-six.vercel.app"
                   target="_blank"
                   className="btn mt-4 px-4 fw-medium fs-5 d-flex align-items-center"
                   style={{

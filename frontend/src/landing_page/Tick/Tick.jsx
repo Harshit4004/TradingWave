@@ -5,7 +5,7 @@ import NavBar from "./NavBar.jsx";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import api from "../../api/api";
+import api from "../../api/api.js";
 
 function Tick() {
   const navigate = useNavigate();

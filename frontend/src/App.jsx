@@ -8,7 +8,7 @@ import ProductPage from "./landing_page/products/ProductPage";
 import PricingPage from "./landing_page/pricing/PricingPage";
 import SupportPage from "./landing_page/support/SupportPage";
 import NotFound from "./landing_page/NotFound";
-import Tick from "./landing_page/Tick/Tick";
+import Tick from "./landing_page/tick/Tick";
 import Login from "./landing_page/auth/Login";
 
 import Navbar from "./landing_page/Navbar";
